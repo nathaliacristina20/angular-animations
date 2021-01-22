@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  template: `<button [@stretch]="buttonState" (click)="onClick()">Click</button>`,
+  template: `<button [@stretch]="buttonState" (click)="onClick()">Animation Button</button>`,
   styleUrls: ['./button.component.css'],
   animations: [
     trigger('stretch', [
-      state('normal', style({ width: '60px' })),
-      state('stretched', style({ width: '120px' })),
+      state('normal', style({ width: '120px' })),
+      state('stretched', style({ width: '180px' })),
       transition('normal => stretched', animate('300ms')),
       transition('stretched => normal', animate('500ms')),
     ])

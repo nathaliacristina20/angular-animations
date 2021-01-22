@@ -1,3 +1,4 @@
+import { NotificationService } from './notification.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-animations';
+
+  public show = false;
+
+  constructor(private notificationService: NotificationService){
+
+  }
+
+  testando(){
+    this.show = !this.show;
+  }
+
+  snackbar(){
+    this.notificationService.notify('Ola!!!!!');
+  }
+
 }
+
